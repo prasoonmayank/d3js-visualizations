@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 dev environment</title>
+	<script src="d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<script>
+        var data = [
+            {expense: 10, category: 'Retail'},
+            {expense: 15, category: 'Gas'},
+            {expense: 12, category: 'Gas'},
+            {expense: 20, category: 'Transport'},
+            {expense: 25, category: 'Retail'},
+            {expense: 30, category: 'Transport'},
+            {expense: 8, category: 'Retail'},
+            {expense: 19, category: 'Gas'}
+        ];
+
+        function render ( data, category ) {
+            d3.select('body').selectAll('div.h-bar')
+                    .data(data)
+                .enter()
+                .append('div')
+                    .attr('class', 'h-bar')
+                .append('span');
+
+            d3.select('body').selectAll('div.h-bar')
+                    .data(data)
+                .exit().remove();
+
+            d3.select('body').selectAll('div.h-bar')
+                    .data(data)
+                .attr('class', 'h-bar')
+                .style('width', function (d) {
+                    return (d.expense * 5) + 'px';
+                })
+                .select('span')
+                    .text(function (d) {
+                        return d.category;
+                    });
+
+                    
+        }
+
+	</script>
+</body>
+</html>

@@ -30,3 +30,6 @@ The opposite thing happens when using the exit selection in this case. There the
 enter is used to calculate A-B, while exit is used to calculate B-A. Here, A is the number of data elements while B is the number of DOM elements.
 
 Data-driving the visualization means that we can have dynamic function to compute the value of the data on the go.
+
+Binding functions as data:
+

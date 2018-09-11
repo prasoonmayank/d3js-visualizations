@@ -1,0 +1,5 @@
+D3 js is built using functional style js rather than object oriented or procedural oriented js styles.
+
+Functions in js are objects. The only difference between the normal objects and the functions as objects is that, the function objects can be invoked, and further associated with two properties, function context and function code.
+
+Arguments variable is a built-in hidden parameter that is available to functions when they are invoked. The arguments variable contains all arguments for a function invokation in an array.

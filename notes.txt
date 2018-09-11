@@ -5,7 +5,16 @@ Functions in js are objects. The only difference between the normal objects and 
 Arguments variable is a built-in hidden parameter that is available to functions when they are invoked. The arguments variable contains all arguments for a function invokation in an array.
 
 Function chaining:
-It is a function invocation pattern increasingly used in d3.js where the successive functions are chained to each other, such that they are implemented one after the other.
+It is a function invocation pattern increasingly used in d3.js where the successive functions are chained to each other, such that they are implemented one after the other. This is one of the bigger advantages of using js.
 
 Selection:
 Selection helps to target certain visual elements in the page. The w3c selector APIs have their limitations when it comes to web development, when it comes to data visualization.
+
+.each function:
+.each is used as the iterator for the selection. It takes two optional paramters d and i with one more hidden parameter called this. d refers to the datum bound to the element. i is the index number of the object being iterated through.
+
+Subselection is really important in all cases. The > or < sign is used for all of these possibilities. The > sign implies that the element in the left object.
+
+The raw selection is not making sense
+
+

@@ -17,4 +17,16 @@ Subselection is really important in all cases. The > or < sign is used for all o
 
 The raw selection is not making sense
 
+Dealing with data can be understood as binding array as data, binding object literals as data, binding functions as data, working with arrays, filtering with data, sorting with data and loading data from server.
 
+The major difference between data and information is that data is raw information.
+
+The best way to define data for visualization is through javascript arrays.
+
+Understanding enter, exit and update:
+By applying data(), we join data elements and DOM elements to each other.
+If the number of items in the dataset are more than the number of available DOM elements, the surplus items are stored in a subset of this selection called the enter selection.
+The opposite thing happens when using the exit selection in this case. There the number of items in the dataset is more than the number of available DOM elements. 
+enter is used to calculate A-B, while exit is used to calculate B-A. Here, A is the number of data elements while B is the number of DOM elements.
+
+Data-driving the visualization means that we can have dynamic function to compute the value of the data on the go.

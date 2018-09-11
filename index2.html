@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 dev environment</title>
+    <script src="d3.js"></script>
+    <style>
+        .box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p class="box" id="target"></p>
+    <p id="fntarget"></p>
+	<script>
+
+        var inst = function () {
+            return "Hello there";
+        }
+
+        d3.select('#target').text('Yeah, it works').attr('style', 'color: rgb(0,0,255)');
+        d3.select('#fntarget').text(inst())
+        d3.selectAll('p').classed('box', true).attr('style', 'border-radius: 20px');
+
+	</script>
+</body>
+</html>

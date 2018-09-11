@@ -6,3 +6,6 @@ Arguments variable is a built-in hidden parameter that is available to functions
 
 Function chaining:
 It is a function invocation pattern increasingly used in d3.js where the successive functions are chained to each other, such that they are implemented one after the other.
+
+Selection:
+Selection helps to target certain visual elements in the page. The w3c selector APIs have their limitations when it comes to web development, when it comes to data visualization.

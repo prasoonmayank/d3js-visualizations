@@ -31,5 +31,16 @@ enter is used to calculate A-B, while exit is used to calculate B-A. Here, A is 
 
 Data-driving the visualization means that we can have dynamic function to compute the value of the data on the go.
 
-Binding functions as data:
+Charting in d3js:
+d3js charts are mostly based upon using svg rather than the HTML based charts.
+- Margin conventions while defining charts in d3js: We define a margin object, and thenafter define the width and height of the inner elements of the given chart, by subtracting the given space for the graph with the given margin.
+- The x and the y axes are defined using the d3.scale.linear().range()
+
+* Margins: Every chart has four different margins. A flexible chart should allow its users for having flexible margin settings.
+
+* Coordinate Translation - Coordinate reference of the chart body should be defined using the SVG translate option. The Translation moves the chart body area to the desired point, and one added benefit of this is that by shifting the frame of reference, it simplifies the job of creating sub-elements inside the chart body.
+* Axes - Chart axes are placed inside the chart margins.
+
+
+
 

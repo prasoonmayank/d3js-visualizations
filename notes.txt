@@ -31,6 +31,26 @@ enter is used to calculate A-B, while exit is used to calculate B-A. Here, A is 
 
 Data-driving the visualization means that we can have dynamic function to compute the value of the data on the go.
 
+D3 provides various constructs called scales to help us in mapping. Scales is also very much important in understanding the axes and transition.
+
+Understanding functions:
+If f is a function from A to B, then A is the domain of f, while B is the co-domain of f. If f(a) = b, then b is the image of a, while a is the pre-image of b.
+Mostly scale function in visualization is usually a one-to-one function rather than an onto function.
+
+Quantitative scales:
+This scales is used to create custom labels on the axes based on the functions defined from A to B, where B is the respective axis labels whch is a function of the values of A.
+
+Time scales:
+Time scales support seperate domain and range definitions, which are used to map date- and time- based data points to visual range.
+
+Ordinal scale:
+This is when the graph has to be mapped on ordinal values, ie the text label values.
+
+Interpolator:
+Interploation refers to the process of finding the values of f(x) at different values of x, when the values of f(x) is given for certain values of x. Interpolation is really important in d3js as there are applications in scale implementation as well as animation and layout management.
+So as to properly use interpolation, d3 has a sepeately defined construct called interpolator, so that cross-functional concerns can be addressed in a centralized and consistent fashion.
+
+
 Charting in d3js:
 d3js charts are mostly based upon using svg rather than the HTML based charts.
 - Margin conventions while defining charts in d3js: We define a margin object, and thenafter define the width and height of the inner elements of the given chart, by subtracting the given space for the graph with the given margin.

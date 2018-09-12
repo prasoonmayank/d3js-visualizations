@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 dev environment</title>
+	<script src="d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div id="dollar" class="clear">
+        <span>Custom Dollar Interpolation<br></span>
+    </div>
+    <div id="alphabet" class="clear">
+        <span>Custom Alphabet Interpolation<br></span>
+    </div>
+	<script>
+
+
+        // This part of the code requires improvement
+        d3.interpolators.push(function (a, b) {
+            var re = /^\$([0-9,.]+)$/, 
+            ma, mb, f = d3.format(',.02f');
+            if ((ma = re.exec(a)) && (mb = re.exec(b))) {
+                a = parseFloat(ma[1]);
+                b = parseFloat(mb[1]) - a;
+                return function (t) {
+                    return '$' + f(a + b * t);
+                }
+            }
+        });
+
+        d3.interpolators.push( function (a, b) {
+            var re = /^([a-z])$/, ma, mb;
+            if((ma.re.exec(a)) && (mb = re.exec(b))) {
+                a = a.charCodeAt(0);
+                var delta = a - b.charCodeAt(0);
+                return function ( t ) {
+                    return String.fromCharCode(Math.ceil(a - delta * t));
+                };
+            }
+        });
+
+        var dollarScale = d3.scaleLinear()
+                .domain([0, 11])
+                .range(['$0', '$300']);
+
+        var alphabetScale = d3.scaleLinear()
+                .domain([0, 27])
+                .range(['a', 'z']);
+
+        function render ( scale, selector ) {
+            var data = [];
+            var max = scale.domain()[1];
+
+            for ( var i = 0; i < max; i++ ) data.push(i);
+
+            d3.select(selector).selectAll('div.cell')
+                    .data(data)
+                .enter()
+                    .append('div')
+                        .classed('cell', true)
+                    .append('span')
+
+            d3.select(selector).selectAll('div.cell')
+                    .data(data)
+                .exit().remove();
+
+            d3.select(selector).selectAll('div.cell')
+                    .data(data)
+                    .style('display', 'inline-block')
+                    .select('span')
+                        .text( function (d, i) {
+                            return scale(d);
+                        })
+        }
+
+        render(dollarScale, '#dollar');
+        render(alphabetScale, '#alphabet');
+
+	</script>
+</body>
+</html>
